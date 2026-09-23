@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UBG Embed Studio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">UBG</p>
+        <h1>Embed Studio</h1>
+        <p class="subtitle">Paste code, upload a file, and generate a live embed.</p>
+      </div>
+      <div class="actions">
+        <button id="loadDemo" class="button secondary">Load demo</button>
+        <button id="copyEmbed" class="button primary">Copy embed</button>
+      </div>
+    </header>
+
+    <div class="toolbar">
+      <label class="button secondary" for="fileInput">Upload file<input id="fileInput" type="file" hidden></label>
+      <button id="downloadBtn" class="button secondary">Download</button>
+      <button id="clearBtn" class="button ghost">Clear</button>
+    </div>
+
+    <section class="workspace">
+      <article class="panel">
+        <div class="panel-heading">
+          <h2>Code or file content</h2>
+          <div class="badges"><span id="fileBadge" class="badge">untitled.txt</span><span id="typeBadge" class="badge">text</span></div>
+        </div>
+        <div id="dropZone" class="drop-zone">
+          <textarea id="editor" spellcheck="false" placeholder="Paste HTML, CSS, JavaScript, JSON, or any text here..."></textarea>
+          <div class="drop-overlay">Drop a text/code file here</div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-heading"><h2>Live preview</h2></div>
+        <div class="preview"><iframe id="previewFrame" title="Embedded preview" sandbox="allow-scripts allow-forms allow-modals"></iframe><pre id="textPreview" class="text-preview hidden"></pre></div>
+        <label class="embed-label" for="embedOutput">Embed code</label>
+        <textarea id="embedOutput" class="embed-output" readonly></textarea>
+      </article>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
