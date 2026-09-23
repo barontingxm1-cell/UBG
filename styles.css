@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UBG Embed Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-block">
+          <p class="eyebrow">UBG</p>
+          <h1>Embed Studio</h1>
+        </div>
+        <div class="header-actions">
+          <button id="loadDemo" class="secondary-btn">Load demo</button>
+          <button id="copyEmbed" class="primary-btn">Copy embed</button>
+        </div>
+      </header>
+
+      <div class="toolbar">
+        <label class="upload-btn" for="fileInput">
+          <input id="fileInput" type="file" hidden />
+          <span>Upload file</span>
+        </label>
+        <button id="downloadBtn" class="secondary-btn">Download</button>
+        <button id="clearBtn" class="ghost-btn">Clear</button>
+      </div>
+
+      <main class="workspace">
+        <section class="panel input-panel">
+          <div class="panel-header">
+            <h2>Paste code or file content</h2>
+            <div class="badges">
+              <span id="fileBadge" class="badge neutral">untitled.txt</span>
+              <span id="typeBadge" class="badge neutral">text</span>
+            </div>
+          </div>
+
+          <div id="dropZone" class="dropzone" aria-label="Drop a file here">
+            <textarea
+              id="editor"
+              spellcheck="false"
+              aria-label="Paste code or file content"
+              placeholder="Paste your extracted game code, HTML, CSS, JS, JSON, or any text here..."
+            ></textarea>
+            <div class="drop-overlay">
+              <span>Drop file here</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel preview-panel">
+          <div class="panel-header">
+            <h2>Auto embed preview</h2>
+          </div>
+
+          <div id="previewWrap" class="preview-wrap">
+            <iframe id="previewFrame" title="Preview" sandbox="allow-scripts allow-modals allow-forms"></iframe>
+            <pre id="textPreview" class="text-preview hidden"></pre>
+          </div>
+
+          <div class="embed-box">
+            <label for="embedOutput">Embed code</label>
+            <textarea id="embedOutput" readonly aria-label="Embed output"></textarea>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
